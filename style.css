@@ -1,0 +1,238 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+}
+
+#map {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+#create-buttons {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+#create-buttons button {
+  padding: 14px 20px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+  transition: all 0.2s ease;
+}
+
+#create-buttons button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+#create-buttons button:active {
+  transform: translateY(1px);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+#sidebar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 350px;
+  background: #fff;
+  box-shadow: 2px 0 12px rgba(0, 0, 0, 0.15);
+  z-index: 1100;
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+.hidden {
+  display: none !important;
+}
+
+#sidebar-header {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 1.5em;
+  color: #333;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 12px;
+}
+
+#sidebar-body {
+  flex: 1;
+  overflow-y: auto;
+}
+
+#sidebar-body label {
+  display: block;
+  margin-bottom: 18px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #444;
+}
+
+#sidebar-body input {
+  width: 100%;
+  padding: 12px 14px;
+  margin-top: 6px;
+  box-sizing: border-box;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: border 0.3s ease;
+}
+
+#sidebar-body input:focus {
+  border-color: #75c800;
+  outline: none;
+}
+
+#sidebar-footer {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 2px solid #eee;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#sidebar-footer button {
+  margin-left: 12px;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+}
+
+#sidebar-footer button:first-child {
+  background-color: #75c800;
+  color: white;
+}
+
+#sidebar-footer button:last-child {
+  background-color: #f3f3f3;
+  color: #333;
+}
+
+#sidebar-footer button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Hide Leaflet Draw's default toolbars */
+.leaflet-control-draw,
+.leaflet-draw-actions {
+  display: none !important;
+}
+
+.edge-marker {
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 2px solid #666;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.edge-marker div {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  color: #333;
+}
+
+.custom-marker {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Debug overlay styling */
+#debug-overlay {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(255,255,255,0.9);
+    padding: 12px 16px;
+    border-radius: 8px;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    font-family: sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+#debug-overlay div {
+    margin: 4px 0;
+    display: flex;
+    justify-content: space-between;
+    width: 120px;
+}
+
+#debug-overlay span {
+    font-weight: bold;
+    color: #333;
+}
+
+/* Popup styling for better touch interaction */
+.leaflet-popup-content {
+    font-size: 16px;
+    padding: 8px 4px;
+}
+
+.leaflet-popup-content h4 {
+    font-size: 18px;
+    margin: 0 0 10px 0;
+    color: #333;
+}
+
+.popup-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px !important;
+}
+
+.popup-buttons button {
+    padding: 10px 16px;
+    font-size: 15px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    min-width: 80px;
+    transition: all 0.2s ease;
+}
+
+.popup-buttons button:first-child {
+    background-color: #75c800;
+    color: white;
+}
+
+.popup-buttons button:last-child {
+    background-color: #f44336;
+    color: white;
+}
+
+.popup-buttons button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}

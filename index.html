@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Geometry Editor</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <!-- Leaflet Draw CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.css" />
+  <!-- Your own styles -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="map"></div>
+
+  <!-- Create Buttons -->
+  <div id="create-buttons">
+    <button data-type="fieldblock">Create FieldBlock</button>
+    <button data-type="abline">Create ABLine</button>
+    <button data-type="obstacle">Create Obstacle</button>
+    <button data-type="road">Create Road</button>
+    <button data-type="entry">Create Entry</button>
+    <button data-type="subfieldSplit">Create SubFieldSplit</button>
+    <button data-type="unit">Create Unit</button>
+  </div>
+
+  <!-- Sidebar -->
+  <div id="sidebar" class="hidden">
+    <div id="sidebar-header"></div>
+    <div id="sidebar-body"></div>
+    <div id="sidebar-footer"></div>
+  </div>
+
+  <!-- Debug overlay -->
+  <div id="debug-overlay">
+    <div>Edges: <span id="edge-count">0</span></div>
+    <div>Markers: <span id="marker-count">0</span></div>
+    <div>Polygons: <span id="polygon-count">0</span></div>
+  </div>
+
+  <!-- JS: Leaflet First -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- JS: Leaflet Draw After Leaflet -->
+  <script src="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.js"></script>
+
+  <!-- JS: Your App -->
+  <script src="main.js"></script>
+</body>
+</html>
