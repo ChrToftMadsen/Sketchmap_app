@@ -118,6 +118,8 @@ function startCreateGeometry(typeKey, def) {
   currentMode = 'drawing';
   currentType = typeKey;
 
+  map.doubleClickZoom.disable(); // Disable dbl-click to avoid premature finishing on touch devices
+
   const geomType = def.geometry?.type;
 
   let footerHTML = '<button onclick="cancelDrawing()">Cancel</button>';
@@ -185,6 +187,7 @@ function cancelDrawing() {
   }
 
   if (drawControl) map.removeControl(drawControl);
+  map.doubleClickZoom.enable();
   hideSidebar();
 }
 
@@ -479,6 +482,7 @@ function saveGeometry() {
   currentLayer = null;
   currentMode = 'idle';
   currentType = null;
+  map.doubleClickZoom.enable();
   hideSidebar();
 }
 
