@@ -22,6 +22,9 @@ function initMap() {
     attribution: '© OpenStreetMap contributors'
   }).addTo(map);
 
+  // fix buggy touch handler for polyline only
+  L.Draw.Polyline.prototype._onTouch = L.Util.falseFn;
+
   map.addLayer(drawnItems);
   map.addLayer(edgeItems);
   map.addLayer(edgeMarkers);
